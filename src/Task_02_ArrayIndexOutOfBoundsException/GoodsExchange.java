@@ -13,9 +13,8 @@ public class GoodsExchange {
         while (true) {
             try {
                 System.out.println("Please, enter the number of the day you would like to get pricing information for: ");
-                int dayIndex = scanner.nextInt();
-                dayIndex--;
-                showDailyPriceInfo(dayIndex, prices);
+                int displayDayIndex = scanner.nextInt();
+                showDailyPriceInfo(displayDayIndex, prices);
                 System.out.println("Input anything if you would you like to see info for another day or 'N' to finish");
                 if (scanner.next().equalsIgnoreCase("n")) break;
             } catch (InputMismatchException e) {
@@ -27,8 +26,8 @@ public class GoodsExchange {
         }
     }
 
-    private static void showDailyPriceInfo(int dayIndex, double[] prices) {
-        int displayDayIndex = dayIndex + 1;
-        System.out.println("On day " + displayDayIndex  + " the price for the item was " + prices[dayIndex] + " USD");
+    private static void showDailyPriceInfo(int displayDayIndex, double[] prices) {
+        int arrayDayIndex = displayDayIndex - 1;
+        System.out.println("On day " + displayDayIndex  + " the price for the item was " + prices[arrayDayIndex] + " USD");
     }
 }
